@@ -4,7 +4,19 @@ import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
+    protected boolean hasMane;
+    protected Kittens kittens;
+    protected Food food;
+
+    public Lion(Kittens kittens) {
+        this.kittens = kittens;
+    }
+    public Lion(Food food) {
+        this.food = food;
+    }
+    public Lion(){
+
+    }
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
@@ -16,17 +28,15 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
-
     public int getKittens() {
-        return feline.getKittens();
-    }
+        return kittens.getKittens();
+    }   // --> 1
 
     public boolean doesHaveMane() {
         return hasMane;
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return food.getFood("Хищник");       // --> List.of("Животные", "Птицы", "Рыба")
     }
 }
