@@ -4,8 +4,8 @@ import java.util.List;
 
 public class LionAlex extends Lion {
 
-    public LionAlex(Food food) {
-        super(food);
+    public LionAlex(String sex, Kittens kittens, Food food) throws Exception  {
+        super(sex, kittens, food);
     }
 
     public LionAlex(){

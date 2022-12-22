@@ -11,25 +11,24 @@ import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-
     @Mock
     Food food;
-
     @Mock
     Kittens kittensCount;
 
+
     @Test
     public void getFoodTest() throws Exception {
-        Lion lion = new Lion(food);
-        Mockito.when(food.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-        List<String> actualFood = lion.getFood();
+        Lion lion = new Lion("Самец", kittensCount, food);
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
+        Mockito.when(food.getFood("Хищник")).thenReturn(expectedFood);
+        List<String> actualFood = lion.getFood();
         Assert.assertEquals(expectedFood, actualFood);
     }
 
     @Test
-    public void getKittensTestStab(){
-        Lion lion = new Lion(kittensCount);
+    public void getKittensTestStab() throws Exception {
+        Lion lion = new Lion("Самец", kittensCount, food);
         Mockito.when(kittensCount.getKittens()).thenReturn(1);
         int actualKittenCount = lion.getKittens();
         int expectedKittenCount = 1;
@@ -39,15 +38,14 @@ public class LionTest {
     @Test
     public void doesHaveManeTest() throws Exception {
         String sex = "Самец";
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, kittensCount, food);
         Boolean actual = lion.doesHaveMane();
         assertEquals(actual,true);
     }
-
     @Test
     public void doesNotHaveManeTest() throws Exception {
         String sex = "Самка";
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, kittensCount, food);
         Boolean actual = lion.doesHaveMane();
         assertEquals(actual,false);
     }

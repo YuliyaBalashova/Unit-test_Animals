@@ -15,12 +15,16 @@ public class LionAlexTest {
     @Mock
     Food food;
 
+    @Mock
+    Kittens kittens;
+
     @Test
     public void getFoodTest() throws Exception {
-        LionAlex lionAlex = new LionAlex(food);
-        Mockito.when(food.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-        List<String> actualFood = lionAlex.getFood();
+        String sex = "Самец";
+        LionAlex lionAlex = new LionAlex(sex, kittens, food);
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
+        Mockito.when(food.getFood("Хищник")).thenReturn(expectedFood);
+        List<String> actualFood = lionAlex.getFood();
         Assert.assertEquals(expectedFood, actualFood);
     }
 

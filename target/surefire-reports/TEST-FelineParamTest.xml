@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="LionAlexTest" time="0.037" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="FelineParamTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.2.3"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -64,9 +64,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="LionAlexTest" name="getFoodTest" time="0.035"/>
-  <testcase classname="LionAlexTest" name="doesHaveMane" time="0.001"/>
-  <testcase classname="LionAlexTest" name="getPlaceOfLivingTest" time="0"/>
-  <testcase classname="LionAlexTest" name="getKittensTest" time="0"/>
-  <testcase classname="LionAlexTest" name="getFriendsTest" time="0.001"/>
+  <testcase classname="FelineParamTest" name="getKittensCountReturn[0]" time="0.001"/>
+  <testcase classname="FelineParamTest" name="getFoodFelineReturn[0]" time="0"/>
+  <testcase classname="FelineParamTest" name="getKittensCountReturn[1]" time="0"/>
+  <testcase classname="FelineParamTest" name="getFoodFelineReturn[1]" time="0"/>
+  <testcase classname="FelineParamTest" name="getKittensCountReturn[2]" time="0"/>
+  <testcase classname="FelineParamTest" name="getFoodFelineReturn[2]" time="0.001"/>
+  <testcase classname="FelineParamTest" name="getKittensCountReturn[3]" time="0"/>
+  <testcase classname="FelineParamTest" name="getFoodFelineReturn[3]" time="0"/>
 </testsuite>

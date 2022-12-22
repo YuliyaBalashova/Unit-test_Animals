@@ -23,10 +23,8 @@ public class CatTest {
         List<String> expectedFood = Arrays.asList("Животные", "Птицы", "Рыба");
         Assert.assertEquals(expectedFood, actualFood);
     }
-
     @Test
     public void getSoundTest() {
-        Feline feline = new Feline();
         Cat testCat = new Cat(feline);
         String actualSound = testCat.getSound();
         String expectedSound = "Мяу";
